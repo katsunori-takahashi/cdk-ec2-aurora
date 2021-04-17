@@ -11,6 +11,40 @@
     "@aws-cdk/aws-s3:grantWriteWithoutAcl": true,
     "@aws-cdk/aws-ecs-patterns:removeDefaultDesiredCount": true,
     "@aws-cdk/aws-rds:lowercaseDbIdentifier": true,
-    "@aws-cdk/aws-efs:defaultEncryptionAtRest": true
+    "@aws-cdk/aws-efs:defaultEncryptionAtRest": true,
+    "SnsStack": {
+      "email": "Your email address"
+    },
+    "NetworkStack": {
+      "enableDnsHostnames": true,
+      "enableDnsSupport": true,
+      "cidr": "10.0.0.0/16",
+      "natGateways": 0,
+      "maxAzs": 2
+    },
+    "SecurityGroupStack": {
+      "vpcId": "vpc-0d1222c244d9bfbd4",
+      "ssl": false
+    },
+    "Ec2Stack": {
+      "vpcId": "vpc-0d1222c244d9bfbd4",
+      "albSecurityGroupId": "sg-022e0fb0714c3ff2b",
+      "ec2SecurityGroupId": "sg-009dbbd89292e6862",
+      "ssl": false,
+      "keyName": "",
+      "certificateArn": ""
+    },
+    "RdsStack": {
+      "vpcId": "vpc-0d1222c244d9bfbd4",
+      "rdsSecurityGroupId": "sg-0cf4800a6b6f8b897",
+      "rdsInstanceIdentifier": "test",
+      "rdsDatabaseName": "test",
+      "rdsMultiAz": false,
+      "rdsInstanceCount": 1,
+      "deletionProtection": false,
+      "cpuAlarmEvaluationPeriods": 1,
+      "cpuAlarmThreshold": 80,
+      "enablePerformanceInsights": false
+    }
   }
 }
